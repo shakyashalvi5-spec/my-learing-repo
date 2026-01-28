@@ -1,87 +1,62 @@
 <?php
-$girl = "Shalvi";
-$boy  = "Arun";
+date_default_timezone_set("Asia/Kolkata");
+
+$server_ip = $_SERVER['SERVER_ADDR'];
+$server_name = $_SERVER['SERVER_NAME'];
+$time = date("d M Y, h:i:s A");
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?php echo $girl; ?> 💖 <?php echo $boy; ?></title>
-
+    <title>CI/CD Deployment Success</title>
     <style>
         body {
-            background: linear-gradient(to right, #ffe6f0, #fff0f5);
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
             text-align: center;
-            font-family: "Segoe UI", cursive;
-            padding-top: 50px;
+            padding-top: 80px;
         }
         .card {
-            background: white;
+            background: rgba(0,0,0,0.4);
+            padding: 40px;
             width: 60%;
             margin: auto;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
         }
-        h1 { color: #ff4081; }
-        .shayari {
+        h1 {
+            color: #00ffcc;
+        }
+        p {
             font-size: 18px;
-            color: #444;
-            margin: 20px 0;
-            font-style: italic;
         }
-        .heart {
-            font-size: 40px;
-            animation: beat 1s infinite;
+        .success {
+            font-size: 22px;
+            color: #00ff00;
+            margin-top: 20px;
         }
-        @keyframes beat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-        button {
-            background: #ff4081;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 18px;
-            border-radius: 25px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #e91e63;
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.8;
         }
     </style>
 </head>
-
 <body>
 
 <div class="card">
-    <h1>💌 A Little Confession 💌</h1>
+    <h1>🚀 CI/CD Deployment Successful</h1>
+    <p class="success">GitHub Actions → EC2 → Apache → PHP ✔️</p>
 
-    <p><strong><?php echo $girl; ?></strong> ➡️ <strong><?php echo $boy; ?></strong></p>
+    <p><strong>Server Name:</strong> <?php echo $server_name; ?></p>
+    <p><strong>Server IP:</strong> <?php echo $server_ip; ?></p>
+    <p><strong>Deployed At:</strong> <?php echo $time; ?></p>
 
-    <div class="shayari">
-        "Tum muskura do to savera ho jaye 🌸 <br>
-        Tum saath ho to har andhera kho jaye 🌙 <br>
-        Ek baat kehni thi dil se 💖 <br>
-        Kya tum mere ho jaoge?"
-    </div>
-
-    <p style="font-size:20px;">
-        <?php echo $boy; ?> ❤️ <br>
-        main tumse kuch kehna chahti hoon… <br>
-        har din, har khushi, har dard <br>
-        **tumhare saath jeena chahti hoon** 🌹
-    </p>
-
-    <div class="heart">❤️</div>
-
-    <h2>Will you be mine?</h2>
-
-    <button onclick="alert('She said YES! 💍❤️')">
-        Yes 💖
-    </button>
+    <footer>
+        🔐 Secure SSH Deployment | Built with ❤️ on AWS EC2
+    </footer>
 </div>
 
 </body>
