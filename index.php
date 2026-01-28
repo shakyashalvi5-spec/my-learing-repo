@@ -1,3 +1,3 @@
 <?php
-echo "Initial Deployment 🚀";
+echo "CI/CD SSH FIXED 🔐🔥";
 ?>
