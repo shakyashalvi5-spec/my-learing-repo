@@ -1,3 +1,3 @@
 <?php
-echo "CI/CD SSH FIXED 🔐🔥";
+echo "CI/CD SSH FIXED-FIRST-TIME 🔐🔥";
 ?>
