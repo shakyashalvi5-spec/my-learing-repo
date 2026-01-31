@@ -1,6 +1,6 @@
 <?php
-$you   = "Shalvi";
-$bestie = "Priya";
+$you   = "xyz";
+$bestie = "abc";
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +26,12 @@ $bestie = "Priya";
             box-shadow: 0 0 20px rgba(0, 150, 136, 0.4);
             position: relative;
             z-index: 2;
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+
+        .glow {
+            transform: scale(1.02);
+            box-shadow: 0 0 35px rgba(0, 150, 136, 0.8);
         }
 
         h1 { color: #009688; }
@@ -56,7 +62,6 @@ $bestie = "Priya";
             background: #00796b;
         }
 
-        /* Surprise text */
         #surprise {
             display: none;
             margin-top: 20px;
@@ -70,14 +75,14 @@ $bestie = "Priya";
             to   { opacity: 1; transform: scale(1); }
         }
 
-        /* Falling emojis – FRONT PAGE */
+        /* FRONT falling emojis */
         .fall {
             position: fixed;
             top: -10px;
             font-size: 26px;
             animation: fall 5s linear infinite;
-            z-index: 9999;          /* 🔥 FRONT */
-            pointer-events: none;  /* click disturb na ho */
+            z-index: 9999;
+            pointer-events: none;
         }
 
         @keyframes fall {
@@ -91,23 +96,23 @@ $bestie = "Priya";
 
 <body>
 
-<div class="card">
+<div class="card" id="card">
     <h1>🤍 My Forever Bestie 🤍</h1>
 
     <p><strong><?php echo $you; ?></strong> 🫂 <strong><?php echo $bestie; ?></strong></p>
 
     <div class="shayari">
-        "Dosti wo nahi jo roz mile 💫 <br>
-        Dosti wo hai jo door rehkar bhi saath chale 🤝 <br>
-        Hasna ho to reason tum ho 😄 <br>
-        Gir jaaun to sambhaalne wale tum ho 💙"
+        "Log milte hain, log bichhadte hain 🌍 <br>
+        Kuch sirf yaadein ban jaate hain 💭 <br>
+        Par tu wo dost hai 💙 <br>
+        Jo har haal me saath nibhata hai 🤝"
     </div>
 
     <p style="font-size:20px;">
-        <?php echo $bestie; ?> 💙 <br>
-        tu sirf dost nahi, meri strength hai 🤍 <br>
-        kam baatein, gehri yaari <br>
-        aur lifetime memories ✨
+        <?php echo $bestie; ?> 💫 <br>
+        tu mera comfort, meri strength 🤍 <br>
+        no drama, no condition <br>
+        bas pure dil wali yaari ✨
     </p>
 
     <div class="emoji">😄🤗✨</div>
@@ -118,19 +123,30 @@ $bestie = "Priya";
 
     <div id="surprise">
         💙 BFF MODE ACTIVATED 💙 <br>
-        Chahe sab badal jaaye 🌍 <br>
-        <b>hum kabhi nahi badlenge 🤝</b>
+        Zindagi jaisi bhi ho 🌈 <br>
+        <b>hum hamesha ek team rahenge 🤝</b>
     </div>
 </div>
+
+<!-- Soft friendship music -->
+<audio id="music">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 function bestieSurprise() {
     document.getElementById("surprise").style.display = "block";
     document.getElementById("bffBtn").disabled = true;
 
+    // Card glow
+    document.getElementById("card").classList.add("glow");
+
+    // Play music
+    document.getElementById("music").play();
+
     const emojis = ["❤️", "⭐", "💙", "✨"];
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 35; i++) {
         let item = document.createElement("div");
         item.className = "fall";
         item.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
@@ -138,9 +154,7 @@ function bestieSurprise() {
         item.style.animationDuration = (Math.random() * 2 + 3) + "s";
         document.body.appendChild(item);
 
-        setTimeout(() => {
-            item.remove();
-        }, 5000);
+        setTimeout(() => item.remove(), 5000);
     }
 }
 </script>
