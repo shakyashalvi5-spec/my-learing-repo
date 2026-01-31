@@ -16,6 +16,7 @@ $bestie = "Priya";
             padding-top: 50px;
             overflow: hidden;
         }
+
         .card {
             background: white;
             width: 60%;
@@ -26,6 +27,7 @@ $bestie = "Priya";
             position: relative;
             z-index: 2;
         }
+
         h1 { color: #009688; }
 
         .shayari {
@@ -49,6 +51,7 @@ $bestie = "Priya";
             border-radius: 25px;
             cursor: pointer;
         }
+
         button:hover {
             background: #00796b;
         }
@@ -59,21 +62,22 @@ $bestie = "Priya";
             margin-top: 20px;
             font-size: 22px;
             color: #00796b;
-            animation: fadeIn 2s ease-in-out;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
+            to   { opacity: 1; transform: scale(1); }
         }
 
-        /* Falling emojis */
+        /* Falling emojis – FRONT PAGE */
         .fall {
             position: fixed;
             top: -10px;
-            font-size: 24px;
+            font-size: 26px;
             animation: fall 5s linear infinite;
-            z-index: 1;
+            z-index: 9999;          /* 🔥 FRONT */
+            pointer-events: none;  /* click disturb na ho */
         }
 
         @keyframes fall {
@@ -93,44 +97,45 @@ $bestie = "Priya";
     <p><strong><?php echo $you; ?></strong> 🫂 <strong><?php echo $bestie; ?></strong></p>
 
     <div class="shayari">
-        "Dosti wo nahi jo sirf saath rahe 🤍 <br>
-        Dosti wo hai jo har haal me saath de 🤝 <br>
-        Hasna ho to wajah tum ho 😄 <br>
-        Aur rona ho to himmat bhi tum ho 💫"
+        "Dosti wo nahi jo roz mile 💫 <br>
+        Dosti wo hai jo door rehkar bhi saath chale 🤝 <br>
+        Hasna ho to reason tum ho 😄 <br>
+        Gir jaaun to sambhaalne wale tum ho 💙"
     </div>
 
     <p style="font-size:20px;">
         <?php echo $bestie; ?> 💙 <br>
-        tu mera safe place hai 🫂 <br>
-        kam words, zyada feelings <br>
-        aur infinite yaari ✨
+        tu sirf dost nahi, meri strength hai 🤍 <br>
+        kam baatein, gehri yaari <br>
+        aur lifetime memories ✨
     </p>
 
     <div class="emoji">😄🤗✨</div>
 
     <h2>Best Friends Forever?</h2>
 
-    <button onclick="bestieSurprise()">Always 💙</button>
+    <button onclick="bestieSurprise()" id="bffBtn">Always 💙</button>
 
     <div id="surprise">
         💙 BFF MODE ACTIVATED 💙 <br>
-        Chahe duniya idhar-udhar ho jaye 🌍 <br>
-        <b>hum hamesha saath rahenge 🤝</b>
+        Chahe sab badal jaaye 🌍 <br>
+        <b>hum kabhi nahi badlenge 🤝</b>
     </div>
 </div>
 
 <script>
 function bestieSurprise() {
     document.getElementById("surprise").style.display = "block";
+    document.getElementById("bffBtn").disabled = true;
 
     const emojis = ["❤️", "⭐", "💙", "✨"];
 
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 30; i++) {
         let item = document.createElement("div");
         item.className = "fall";
         item.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
         item.style.left = Math.random() * 100 + "vw";
-        item.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        item.style.animationDuration = (Math.random() * 2 + 3) + "s";
         document.body.appendChild(item);
 
         setTimeout(() => {
