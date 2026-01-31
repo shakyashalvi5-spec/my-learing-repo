@@ -1,62 +1,82 @@
 <?php
-date_default_timezone_set("Asia/Kolkata");
-
-$server_ip = $_SERVER['SERVER_ADDR'];
-$server_name = $_SERVER['SERVER_NAME'];
-$time = date("d M Y, h:i:s A");
+$you   = "xyz";
+$bestie = "abc";
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CI/CD Deployment Success</title>
+    <title><?php echo $you; ?> 🤝 <?php echo $bestie; ?></title>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-            color: #fff;
+            background: linear-gradient(to right, #e0f7fa, #e3f2fd);
             text-align: center;
-            padding-top: 80px;
+            font-family: "Segoe UI", cursive;
+            padding-top: 50px;
         }
         .card {
-            background: rgba(0,0,0,0.4);
-            padding: 40px;
+            background: white;
             width: 60%;
             margin: auto;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.6);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 150, 136, 0.4);
         }
-        h1 {
-            color: #00ffcc;
-        }
-        p {
+        h1 { color: #009688; }
+        .shayari {
             font-size: 18px;
+            color: #444;
+            margin: 20px 0;
+            font-style: italic;
         }
-        .success {
-            font-size: 22px;
-            color: #00ff00;
-            margin-top: 20px;
+        .emoji {
+            font-size: 35px;
+            margin: 15px 0;
         }
-        footer {
-            margin-top: 30px;
-            font-size: 14px;
-            opacity: 0.8;
+        button {
+            background: #009688;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #00796b;
         }
     </style>
 </head>
+
 <body>
 
 <div class="card">
-    <h1>🚀 CI/CD Deployment Successful by Shalvi</h1>
-    <p class="success">GitHub Actions → EC2 → Apache → PHP ✔️</p>
+    <h1>🤍 My Forever Bestie 🤍</h1>
 
-    <p><strong>Server Name:</strong> <?php echo $server_name; ?></p>
-    <p><strong>Server IP:</strong> <?php echo $server_ip; ?></p>
-    <p><strong>Deployed At:</strong> <?php echo $time; ?></p>
+    <p><strong><?php echo $you; ?></strong> 🫂 <strong><?php echo $bestie; ?></strong></p>
 
-    <footer>
-        🔐 Secure SSH Deployment | Built with ❤️ on AWS EC2
-    </footer>
+    <div class="shayari">
+        "Dosti naam hai sukoon ka 🌈 <br>
+        Bina bole samajh jaane ka 🤗 <br>
+        Muskuraahat ho ya aansu 😌 <br>
+        Bestie ho to sab aasaan lagta hai 💙"
+    </div>
+
+    <p style="font-size:20px;">
+        <?php echo $bestie; ?> 💫 <br>
+        tu sirf dost nahi, ek family jaisa hai 🤍 <br>
+        bina shart, bina wajah <br>
+        bas hamesha saath 🤝
+    </p>
+
+    <div class="emoji">😄🤗✨</div>
+
+    <h2>Best Friends Forever?</h2>
+
+    <button onclick="alert('BFF Mode Activated 💙🤝')">
+        Always 💙
+    </button>
 </div>
 
 </body>
