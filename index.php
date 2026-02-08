@@ -1,6 +1,6 @@
 <?php
-$girl = "abc";
-$boy  = "xyz";
+$girl = "Shalvi";
+$boy  = "Arun";
 ?>
 
 <!DOCTYPE html>
