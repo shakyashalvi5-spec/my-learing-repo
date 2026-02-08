@@ -1,162 +1,167 @@
 <?php
-$you   = "xyz";
-$bestie = "abc";
+$girl = "abc";
+$boy  = "xyz";
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?php echo $you; ?> 🤝 <?php echo $bestie; ?></title>
+<title>Happy Propose Day 💍</title>
 
-    <style>
-        body {
-            background: linear-gradient(to right, #e0f7fa, #e3f2fd);
-            text-align: center;
-            font-family: "Segoe UI", cursive;
-            padding-top: 50px;
-            overflow: hidden;
-        }
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    font-family: cursive;
+    text-align: center;
+    overflow: hidden;
+}
 
-        .card {
-            background: white;
-            width: 60%;
-            margin: auto;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 150, 136, 0.4);
-            position: relative;
-            z-index: 2;
-            transition: transform 0.5s, box-shadow 0.5s;
-        }
+.card {
+    background: white;
+    width: 65%;
+    margin: 80px auto;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(255, 0, 102, 0.4);
+    position: relative;
+    z-index: 2;
+    transition: 0.6s;
+}
 
-        .glow {
-            transform: scale(1.02);
-            box-shadow: 0 0 35px rgba(0, 150, 136, 0.8);
-        }
+.glow {
+    box-shadow: 0 0 60px hotpink;
+    transform: scale(1.03);
+}
 
-        h1 { color: #009688; }
+h1 { color: #ff2e63; }
 
-        .shayari {
-            font-size: 18px;
-            color: #444;
-            margin: 20px 0;
-            font-style: italic;
-        }
+button {
+    background: #ff2e63;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+}
 
-        .emoji {
-            font-size: 35px;
-            margin: 15px 0;
-        }
+button:hover {
+    background: #d61c4e;
+}
 
-        button {
-            background: #009688;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 18px;
-            border-radius: 25px;
-            cursor: pointer;
-        }
+#proposal {
+    display: none;
+    font-size: 22px;
+    margin-top: 25px;
+    color: #c2185b;
+    animation: fade 2s ease-in-out;
+}
 
-        button:hover {
-            background: #00796b;
-        }
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 
-        #surprise {
-            display: none;
-            margin-top: 20px;
-            font-size: 22px;
-            color: #00796b;
-            animation: fadeIn 1.5s ease-in-out;
-        }
+/* Falling hearts */
+.fall {
+    position: fixed;
+    top: -10px;
+    font-size: 30px;
+    animation: fall 5s linear infinite;
+    z-index: 9999;
+    pointer-events: none;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to   { opacity: 1; transform: scale(1); }
-        }
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
 
-        /* FRONT falling emojis */
-        .fall {
-            position: fixed;
-            top: -10px;
-            font-size: 26px;
-            animation: fall 5s linear infinite;
-            z-index: 9999;
-            pointer-events: none;
-        }
+/* Ring animation */
+.ring {
+    font-size: 70px;
+    display: none;
+    animation: pop 1.5s infinite alternate;
+}
 
-        @keyframes fall {
-            to {
-                transform: translateY(110vh);
-                opacity: 0;
-            }
-        }
-    </style>
+@keyframes pop {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+</style>
 </head>
 
 <body>
 
 <div class="card" id="card">
-    <h1>🤍 My Forever Bestie 🤍</h1>
 
-    <p><strong><?php echo $you; ?></strong> 🫂 <strong><?php echo $bestie; ?></strong></p>
+<h1>💖 Happy Propose Day 💖</h1>
 
-    <div class="shayari">
-        "Log milte hain, log bichhadte hain 🌍 <br>
-        Kuch sirf yaadein ban jaate hain 💭 <br>
-        Par tu wo dost hai 💙 <br>
-        Jo har haal me saath nibhata hai 🤝"
-    </div>
+<p style="font-size:20px;">
+<?php echo $boy; ?> ❤️ <?php echo $girl; ?>
+</p>
 
-    <p style="font-size:20px;">
-        <?php echo $bestie; ?> 💫 <br>
-        tu mera comfort, meri strength 🤍 <br>
-        no drama, no condition <br>
-        bas pure dil wali yaari ✨
-    </p>
+<p style="font-size:18px;">
+Dil ki ek baat kehni hai 💫 <br>
+Har din tumhare saath aur special lagta hai 🌹
+</p>
 
-    <div class="emoji">😄🤗✨</div>
+<button onclick="propose()">Open My Heart 💌</button>
 
-    <h2>Best Friends Forever?</h2>
+<div id="proposal">
+    💍 <?php echo $girl; ?> 💍 <br><br>
 
-    <button onclick="bestieSurprise()" id="bffBtn">Always 💙</button>
-
-    <div id="surprise">
-        💙 BFF MODE ACTIVATED 💙 <br>
-        Zindagi jaisi bhi ho 🌈 <br>
-        <b>hum hamesha ek team rahenge 🤝</b>
-    </div>
+    Tum meri khushi ho 😊 <br>
+    Tum meri aadat ho ❤️ <br>
+    Kya tum meri life partner banogi? 🌹
 </div>
 
-<!-- Soft friendship music -->
+<div class="ring" id="ring">💍</div>
+
+</div>
+
+<!-- Romantic Music -->
 <audio id="music">
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-function bestieSurprise() {
-    document.getElementById("surprise").style.display = "block";
-    document.getElementById("bffBtn").disabled = true;
 
-    // Card glow
+function propose() {
+
+    document.getElementById("proposal").style.display = "block";
+    document.getElementById("ring").style.display = "block";
     document.getElementById("card").classList.add("glow");
 
-    // Play music
-    document.getElementById("music").play();
+    // 🎵 Play music
+    let music = document.getElementById("music");
+    music.play();
 
-    const emojis = ["❤️", "⭐", "💙", "✨"];
+    // Stop music after 35 sec
+    setTimeout(() => {
+        music.pause();
+        music.currentTime = 0;
+    }, 35000);
 
-    for (let i = 0; i < 35; i++) {
-        let item = document.createElement("div");
-        item.className = "fall";
-        item.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
-        item.style.left = Math.random() * 100 + "vw";
-        item.style.animationDuration = (Math.random() * 2 + 3) + "s";
-        document.body.appendChild(item);
+    // ❤️ Heart Rain
+    const hearts = ["❤️","💖","💕","💘"];
 
-        setTimeout(() => item.remove(), 5000);
+    for (let i = 0; i < 45; i++) {
+        let heart = document.createElement("div");
+        heart.className = "fall";
+        heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 5000);
     }
 }
+
 </script>
 
 </body>
